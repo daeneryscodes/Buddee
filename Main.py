@@ -1,8 +1,11 @@
+#Libraries
 import tkinter as tk
 from tkinter import *
-from tkinter import simpledialog, filedialog
+from tkinter import simpledialog
 import openai
 import pyttsx3
+import sys
+sys.path.append("C:\\Users\\Mahir\\PycharmProjects\\Buddee\\venv\\Lib\\site-packages")
 import speech_recognition as sr
 from api_secrets import API_KEY
 
@@ -24,7 +27,8 @@ conversation = ""
 # Set up tkinter GUI
 root = tk.Tk()
 root.geometry("500x500")
-root.title("Buddee: AI Chatbot")
+root.title("Buddee: AI Friend")
+#Hides main window
 root.withdraw()
 
 
@@ -35,7 +39,7 @@ def open_help_window():
     help_window.geometry('400x70')
 
     # Create a label and text box in the new window
-    label = Label(help_window, text="This is Buddee, your personal AI chatbot.\nType something in the text box and press submit,\n or press the speak button and speak into your microphone.\nBuddee will try its best to answer any questions or requests you may have")
+    label = Label(help_window, text="This is Buddee, your personal AI friend.\nType something in the text box and press submit,\n or press the speak button and speak into your microphone.\nBuddee will try its best to answer any questions or requests you may.")
     label.pack()
 
 def clear_conversation():
@@ -61,6 +65,7 @@ def handle_input():
 
     prompt = bold_username + ": " + user_input + "\n" + "Buddee:"
     conversation += prompt
+
 
     # Defines engine, prompt and tokens used for response
     response = openai.Completion.create(engine='text-davinci-003', prompt=conversation, max_tokens=50)
@@ -97,6 +102,7 @@ def handle_voice_input():
     # Changes conversation box config state to disabled, (read only)
     conversation_box.config(state=DISABLED)
 
+
 #Main menu bar
 main_menu = Menu(root)
 main_menu.add_command(label='Clear', command=clear_conversation)
@@ -104,8 +110,11 @@ main_menu.add_command(label='Help', command=open_help_window)
 root.config(menu=main_menu)
 
 #Prompts user for name
-user_name = simpledialog.askstring(title="Name", prompt="What's your name?\t\t")
+user_name = simpledialog.askstring(title="Buddee: Personal AI Friend", prompt="What's your name?\t\t\t\t")
+#Displays main window after dialogue box is closed
 root.deiconify()
+engine.say(f"Hi {user_name}")
+engine.runAndWait()
 
 # Create text box to display conversation
 conversation_box = tk.Text(root, bd=3, height=20, width=60)
@@ -119,7 +128,7 @@ input_box.pack()
 input_box.config(font=("Arial", 12))
 
 # Welcome message
-conversation_box.insert(tk.END, f"Hi {user_name} I'm Buddee! Your personal AI friend.\nPlease type or say something using the buttons below...\n\n")
+conversation_box.insert(tk.END, f"Hi {user_name} I'm Buddee! Your personal AI friend.\nPlease type or say something...\n\n")
 # Disables conversation box so that it is read only
 conversation_box.config(state= DISABLED)
 

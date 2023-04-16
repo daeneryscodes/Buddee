@@ -17,6 +17,10 @@ mic = sr.Microphone(device_index=1)
 conversation = ""
 user_name = "Mahir"
 
+engine.say("Hi, I'm Buddee, your artifical intelligent friend! Please speak clearly into your microphone so I can hear you.")
+engine.runAndWait()
+
+#While true loop to listen to mic source and transcribe the audio to text. The transcription is then stored in user input variable.
 while True:
     with mic as source:
         print("Listening...")
@@ -29,15 +33,19 @@ while True:
     except:
         continue
 
+# Creates the prompt for the AI using user name and input variables.
     prompt = user_name + ": " + user_input + "\n" + "Buddee :"
-
+# Adds prompt to conversation varialbe to build history of chat.
     conversation += prompt
 
+#Uses openai method to set engine to 'davinci-003', prompt to conversation and max tokens.
     response = openai.Completion.create(engine='text-davinci-003', prompt=conversation, max_tokens=50)
+#Formats response as string.
     response_str = response["choices"][0]["text"].replace("\n", "")
+#Removes username and bot name from response string.
     resposnse_str = response_str.split(user_name + ": ", 1)[0].split("Buddee" + ": ", 1)[0]
 
-
+#Adds reponse string to conversation to build history of chat.
     conversation +=  response_str + "\n"
     print(response_str)
 
