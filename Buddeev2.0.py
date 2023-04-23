@@ -106,7 +106,7 @@ else:
     # Set up tkinter GUI
     root = tk.Tk()
     root.geometry("500x500")
-    root.title("Buddee: AI Friend")
+    root.title("Buddee: Personal AI Companion")
     # Hides main window
     root.withdraw()
 
