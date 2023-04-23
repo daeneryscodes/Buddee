@@ -1,4 +1,4 @@
-#GUI for AI chatbot
+#Test GUI for AI chatbot
 
 #Library
 from tkinter import *
