@@ -11,7 +11,7 @@ from api_secrets import API_KEY
 import time
 
 
-# Imports api key
+# Imports API key from file. API key file has been omitted from this repo for security reasons. 
 openai.api_key = API_KEY
 
 # Engine specified
