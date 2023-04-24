@@ -1,3 +1,4 @@
+# Third and final iteration of Buddee
 # Libraries
 import tkinter as tk
 from tkinter import *
@@ -38,7 +39,7 @@ except:
     print("Could not recognize user response.")
     va = ""
 
-#activate visually impaired mode if user response is yes.
+# Activate visually impaired mode if user response is yes.
 if va.lower() == "yes":
     with mic as source:
         print("Visually impaired mode activated")
