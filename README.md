@@ -14,10 +14,11 @@ In the GUI, you may choose to interact with Buddee via text or voice input. To s
 speak button and you will notice the colour of the button change to red. This indicates that Buddee is
 listening for your prompt. If you notice that Buddee is not understanding you, try turning up your microphone 
 volume or moving closer to your microphone device. To type to Buddee, all you need to do is type your prompt
-in the text area and click on the submit button. Buddee will respond after a few seconds.
+in the text area and click on the submit button. Buddee will respond after a few seconds.In visually impaired
+mode, all you have to do is speak after the bot says "listening". 
 Enjoy your new companion! 
 
-Feel free to donate to help Buddee continue running: paypal.com/mahirali
+Feel free to donate to help Buddee continue running: paypal.com/buddeeteam
 All donations are very much appreciated by the Buddee team! 
 
 Disclaimer: Buddee is an artificial intelligence chatbot that was built by humans. Please do not use Buddee to
