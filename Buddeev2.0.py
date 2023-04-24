@@ -79,7 +79,7 @@ if va.lower() == "yes":
             break
 
         # Creates the prompt for the AI using user name and input variables.
-        prompt = user_name + ": " + user_input + "\n" + "Buddee :"
+        prompt = user_input
 
         # Adds prompt to conversation variable to build history of chat.
         conversation += prompt
