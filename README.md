@@ -23,3 +23,5 @@ All donations are very much appreciated by the Buddee team!
 
 Disclaimer: Buddee is an artificial intelligence chatbot that was built by humans. Please do not use Buddee to
 replace real human relationships.
+
+For futher help please send a message to: support@buddeeteam.com
